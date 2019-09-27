@@ -17,6 +17,18 @@ paths:
       responses:
         '200':
           description: OK
-      description: ''
+        '404':
+          description: Not Found
+      description: Get users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                userId:
+                  type: number
 components:
   schemas: {}
