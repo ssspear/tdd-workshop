@@ -35,5 +35,15 @@ paths:
                 userId:
                   type: number
       operationId: 12345
+    post:
+      summary: ''
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '400':
+          description: Bad Request
+      description: Add users
 components:
   schemas: {}
