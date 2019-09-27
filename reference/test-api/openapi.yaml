@@ -1,49 +1,19 @@
-openapi: 3.0.0
+# Example YAML for the bare minimum of required elements
 info:
-  title: Test API
-  version: '1.0'
-  description: Users
-  contact:
-    email: test@testemail.com
-    name: Sarah
-servers:
-  - url: 'http://localhost:3000'
+  version: "1.0.0"
+  title: petstore
+parameters:
+  productId: 
+       name: productId
+       in: path
+       type: string
+       required: true
 paths:
-  '/users/{userId}':
-    parameters:
-      - type: string
-        name: userId
-        in: path
-        required: true
+  /users:
     get:
-      summary: getUser
-      tags: []
+      parameters:
+        -
+          $ref: '#/parameters/productId'
       responses:
-        '200':
-          description: OK
-        '404':
-          description: Not Found
-      description: Get users
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                username:
-                  type: string
-                userId:
-                  type: number
-      operationId: 12345
-    post:
-      summary: ''
-      responses:
-        '200':
-          description: OK
-        '201':
-          description: Created
-        '400':
-          description: Bad Request
-      description: Add users
-components:
-  schemas: {}
+        "200":
+          description:  Describe the 200 response in more detail
